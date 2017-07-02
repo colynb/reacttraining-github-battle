@@ -70,7 +70,6 @@ class Battle extends React.Component {
   }
 
   handleSubmit (id, username) {
-    console.log(id, username)
     this.setState(() => {
       var newState = {}
       newState[id] = {
@@ -98,7 +97,6 @@ class Battle extends React.Component {
 
     return (
       <div>
-        <pre>{JSON.stringify(this.state, 2, null)}</pre>
         <div className='row'>
           {playerOne.name === '' &&
             <PlayerInput id='playerOne' label='Player One' onSubmit={this.handleSubmit}

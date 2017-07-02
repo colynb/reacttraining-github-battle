@@ -2,7 +2,7 @@ import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 
-module.exports = {
+const config = {
   entry: './src/js/bootstrap.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -22,6 +22,19 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html'
     }),
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'GITHUB_CLIENT_ID', 'GITHUB_CLIENT_SECRET'])
+    new webpack.EnvironmentPlugin(['GITHUB_CLIENT_ID', 'GITHUB_CLIENT_SECRET'])
   ]
 }
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin()
+  )
+}
+
+export default config

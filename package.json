@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "build:prod": "NODE_ENV=production webpack -p",
     "start": "webpack-dev-server --open",
+    "deploy": "npm run build:prod && firebase deploy",
+    "firebase-init": "firebase login && firebase init",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -37,6 +40,7 @@
     "eslint-plugin-node": "^5.1.0",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "firebase-tools": "^3.9.1",
     "html-webpack-plugin": "^2.29.0",
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
