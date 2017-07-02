@@ -2,7 +2,7 @@ import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 module.exports = {
-  entry: './src/js/app.js',
+  entry: './src/js/bootstrap.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'app.bundle.js'

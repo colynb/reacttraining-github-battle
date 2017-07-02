@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "standard"
+  ],
+  "plugins": [
+    "react"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "react/jsx-uses-vars": 2,
+    "react/jsx-no-bind": 0,
+    "no-unused-vars": 0
+  }
+}
