@@ -1,5 +1,6 @@
 import path from 'path'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import webpack from 'webpack'
 
 module.exports = {
   entry: './src/js/bootstrap.js',
@@ -20,6 +21,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+    new webpack.EnvironmentPlugin(['NODE_ENV', 'GITHUB_CLIENT_ID', 'GITHUB_CLIENT_SECRET'])
   ]
 }

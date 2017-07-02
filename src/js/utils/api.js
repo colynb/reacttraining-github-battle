@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const CLIENT_ID = '951e5389fc39216b9371'
-const CLIENT_SECRET = '2f3cedf187ce683ae46702a2fad5da880bbcf7f7'
+const CLIENT_ID = process.env.GITHUB_CLIENT_ID
+const CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET
 const PARAMS = `?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}`
 
 function getProfile (username) {
